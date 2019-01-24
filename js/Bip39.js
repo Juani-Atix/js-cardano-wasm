@@ -2,9 +2,8 @@ import aesjs from 'aes-js';
 import bip39 from 'bip39';
 import blakejs from 'blakejs';
 import { Buffer } from 'safe-buffer';
-import RustModule from './RustModule';
 import Blake2b from './Blake2b';
-import { apply } from './utils/functions';
+import validWords from './utils/valid-words.en';
 
 export const mnemonicToEntropy = (mnemonic) => (
   Buffer.from(bip39.mnemonicToEntropy(mnemonic), 'hex')
@@ -50,6 +49,6 @@ export const decryptRecoveryRegularVend = decryptRegularVend;
 export default {
   mnemonicToEntropy,
   entropyToMnenomic,
-  isValidAdaRedeemMnemonic: apply(isValidAdaRedeemMnemonic, RustModule),
-  decryptRecoveryRegularVend: apply(decryptRecoveryRegularVend, RustModule),
+  isValidAdaRedeemMnemonic,
+  decryptRecoveryRegularVend,
 }
