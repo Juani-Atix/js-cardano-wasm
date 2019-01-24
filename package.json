@@ -30,6 +30,8 @@
     "bip39": "2.3.0"
   },
   "dependencies": {
+    "aes-js": "3.1.0",
+    "blakejs": "1.1.0",
     "iconv-lite": "0.4.19",
     "safe-buffer": "5.1.1"
   },
